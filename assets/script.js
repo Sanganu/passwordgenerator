@@ -36,36 +36,55 @@ function checkForPassword() {
         }
     }
 
-    switch (true) {
-        case validLength && validLower && validUpper && validNumber && validSpecial:
-            document.getElementById("output").insertAdjacentText('beforebegin', 'Valid Password entered. Hurray!!!');
+    if (validLength && validLower && validUpper && validNumber && validSpecial) {
+
+        document.getElementById("output").insertAdjacentText('beforebegin', 'Valid Password entered. Hurray!!!');
+        console.log("Perfect", validLength, validLower, validUpper, validNumber, validSpecial);
+    }
+    else
+     {
+            document.getElementById("output").insertAdjacentText('beforebegin', 'Oops! Password entered does not match criteria.');
             console.log("Perfect", validLength, validLower, validUpper, validNumber, validSpecial);
+     }
 
-        case !(validLength && validLower && validUpper && validNumber && validSpecial):
-            document.getElementById("output").insertAdjacentText('beforebegin', 'InValid Password entered.Oops!!!');
-            console.log("Perfect", validLength, validLower, validUpper, validNumber, validSpecial);
-        case !validLength:
-            document.getElementsByClassName("rules")[4].style.color = "red";
-        case !validLower:
-            document.getElementsByClassName("rules")[0].style.color = "red";
-        case !validUpper:
-            document.getElementsByClassName("rules")[1].style.color = "red";
-        case !validSpecial:
-            document.getElementsByClassName("rules")[3].style.color = "red";
-        case !validNumber:
-            document.getElementsByClassName("rules")[2].style.color = "red";
-        case validLength:
-            document.getElementsByClassName("rules")[4].style.color = "green";
-        case validLower:
-            document.getElementsByClassName("rules")[0].style.color = "green";
-        case validUpper:
-            document.getElementsByClassName("rules")[1].style.color = "green";
-        case validNumber:
-            document.getElementsByClassName("rules")[2].style.color = "green";
-        case validSpecial:
-            document.getElementsByClassName("rules")[3].style.color = "green";
-
-
+    if (validLower) {
+        document.getElementsByClassName("rules")[0].style.color = "green";
+    }
+    else {
+        document.getElementsByClassName("rules")[0].style.color = "red";
     }
 
-} 
+    if (validUpper) {
+        document.getElementsByClassName("rules")[1].style.color = "green";
+    }
+    else {
+        document.getElementsByClassName("rules")[1].style.color = "red";
+    }
+
+    if (validSpecial) {
+        document.getElementsByClassName("rules")[3].style.color = "green";
+    }
+    else {
+        document.getElementsByClassName("rules")[3].style.color = "red";
+    }
+
+    if (validNumber) {
+        document.getElementsByClassName("rules")[2].style.color = "green";
+    }
+    else {
+        document.getElementsByClassName("rules")[2].style.color = "red";
+    }
+
+    if (validLength) {
+        document.getElementsByClassName("rules")[4].style.color = "green";
+    }
+    else {
+
+        document.getElementsByClassName("rules")[4].style.color = "red";
+    }
+
+
+
+}
+
+
