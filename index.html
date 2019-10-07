@@ -14,21 +14,28 @@
     <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
+    <header>
+            <h1>Password Generator App</h1>
+    </header>
     <div>
-        <h1>Password Generator App</h1>
+        <h4>Check User entered password satisfies the given criteria</h4>
+        <h4 id="output"></h4>
         <ol>
-            <p>PAssword Generation Rules</p>
-                <li>Lowercase Letters</li>
-                <li>Uppercase Letters</li>
-                <li>Numbers</li>
-                <li>Special Characters</li>
+            <p>Password Generation Rules</p>
+                <li class="rules">Lowercase Letters</li>
+                <li class="rules">Uppercase Letters</li>
+                <li class="rules">Numbers</li>
+                <li class="rules">Special Characters</li>
+                <li class="rules">Valid Length between 8 and 255</li>
         </ol>
-    
-    </div>
-    <form>
+    <form onsubmit="return false">
         <input type="text" id="userentry" />
-        <button id="checkpassword" onclick="checkForPassword()">Check Password</button>
+        <button type ="button" id="checkpassword" onclick="checkForPassword()">Check Password</button>
     </form>
+     </div>
+     <div>
+         <h4>Generate password based on user criteria chosen</h4>
+     </div>
     <script src="./assets/script.js"></script>
 </body>
 </html>

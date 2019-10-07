@@ -13,7 +13,7 @@ function checkForPassword(){
     for(let i=0;i<userdata.length;i++){
         userdataarray.push(userdata[i])
     }
-    if (userdata.length > 8 && userdata.length < 255){
+    if (userdata.length >= 8 && userdata.length <= 255){
         validLength = true;
         console.log("Valid Length")
     }
@@ -36,5 +36,30 @@ function checkForPassword(){
         }
     }
 
-    console.log(validLower,validUpper,validNumber);
-}
+    switch(true){
+        case validLength && validLower && validUpper && validNumber && validSpecials:
+              document.getElementById("output").insertAdjacentText('beforebegin','Valid Password entered. Hurray!!!');
+              console.log("Perfec")
+              break;
+        case !validLength && !validLower && !validUpper && !validNumber && !validSpecials:
+              document.getElementById("output").insertAdjacentText('beforebegin','InValid Password entered.Oops!!!');
+              break;
+        case !validLength:
+              document.getElementsByClassName("rules")[4].style.color = "red";
+        case !validLower:
+              document.getElementsByClassName("rules")[0].style.color = "red";
+        case !validUpper:
+              document.getElementsByClassName("rules")[1].style.color = "red";
+        case !validNumber:
+               document.getElementsByClassName("rules")[2].style.color = "red";
+        case validLength:
+               document.getElementsByClassName("rules")[4].style.color = "green";
+         case validLower:
+               document.getElementsByClassName("rules")[0].style.color = "green";
+         case validUpper:
+               document.getElementsByClassName("rules")[1].style.color = "green";
+         case validNumber:
+                document.getElementsByClassName("rules")[2].style.color = "green";
+        }
+    
+} 
