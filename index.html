@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Password Generator</title>
-    
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -13,29 +14,71 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="./assets/style.css" />
 </head>
+
 <body>
-    <header>
-            <h1>Password Generator App</h1>
+    <header class="page-headers">
+        <h1>Password Generator App</h1>
     </header>
-    <div>
+    <table>
+      
+    </table>
+    <div class="">
         <h4>Check User entered password satisfies the given criteria</h4>
-        <h4 id="output"></h4>
+        <h3 id="output"></h3>
         <ol>
-            <p>Password Generation Rules</p>
-                <li class="rules">Lowercase Letters</li>
-                <li class="rules">Uppercase Letters</li>
-                <li class="rules">Numbers</li>
-                <li class="rules">Special Characters</li>
-                <li class="rules">Valid Length between 8 and 255</li>
+            <h4>Password Generation Rules</h4>
+            <li class="rules">Lowercase Letters</li>
+            <li class="rules">Uppercase Letters</li>
+            <li class="rules">Numbers</li>
+            <li class="rules">Special Characters    @ # $ % ^ &amp; * ( ) - _ ] [ ; : gt; , . ? </li>
+            <li class="rules">Valid Length between 8 and 255</li>
         </ol>
-    <form>
-        <input type="text" id="userentry" />
-        <button type ="button" id="checkpassword" onclick="checkForPassword()">Check Password</button>
-    </form>
-     </div>
-     <div>
-         <h4>Generate password based on user criteria chosen</h4>
-     </div>
+        <form>
+            <input type="text" id="userentry" />
+            <button type="button" id="checkpassword" onclick="checkForPassword()">Check Password</button>
+            <button type="reset" onclick ="myreset()">Reset</button>
+        </form>
+    </div>
+    <div class="conatiner">
+        <h4>Generate password based on user criteria chosen</h4>
+        <form onsubmit="return false" class="collection">
+                <p class="collection-item">
+                  <label>
+                    <input type="checkbox" class="inputrules" checked="lower"/>
+                    <span>Lowercase Letters</span>
+                  </label>
+                </p>
+                <p  class="collection-item">
+                  <label>
+                    <input type="checkbox" class="inputrules"/>
+                    <span>Uppercase Letters</span>
+                  </label>
+                </p>
+                <p  class="collection-item">
+                  <label>
+                    <input type="checkbox" class="inputrules"/>
+                    <span>Special Characters</span>
+                  </label>
+                </p>
+                <p  class="collection-item">
+                  <label>
+                    <input type="checkbox" class="inputrules"/>
+                    <span>Numbers</span>
+                  </label>
+                </p>
+                <p  class="collection-item">
+                  <label>
+                    <input type="number" value = 10 id="lengthinput"/>
+                    <span>Length 8 to 120 characters</span>
+                  </label>
+                </p>
+                <button  class="collection-item" type="button" onclick="generatePassword()">Generate password</button>
+              </form>
+             <div id='mygeneratedpassword'>
+               <input  id="output2"/>
+             </div> 
+    </div>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>

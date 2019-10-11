@@ -7,9 +7,18 @@ var validLength = false;
 var validLower = false;
 var validUpper = false;
 
+function myreset(){
+    var userdataarray = [];
+    var validSpecial = false;
+    var validNumber = false;
+    var validLength = false;
+    var validLower = false;
+    var validUpper = false;
+    document.getElementById("userentry").innerText = "";
+}
 function checkForPassword() {
     console.log("Check pass");
-    var userdata = document.getElementById("userentry").value;
+    var userdata = document.querySelector("#userentry").value;
     for (let i = 0; i < userdata.length; i++) {
         userdataarray.push(userdata[i])
     }
@@ -82,9 +91,62 @@ function checkForPassword() {
 
         document.getElementsByClassName("rules")[4].style.color = "red";
     }
-
-
-
 }
 
 
+function generatePassword(){
+    var checkElements = document.getElementsByClassName('inputrules'),checked=true;
+    var passwordLength = document.getElementById('lengthinput').value;
+    var passwordGenerated = [];
+    var i =0;
+    console.log("CheckboxITEM",checkElements)
+    while(i< passwordLength){
+        if (checkElements[0].checked){
+           passwordGenerated.push(generateLowerCase());
+           i++
+        }
+        if( checkElements[1].checked){
+           passwordGenerated.push(generateUpperCase());
+            i++;
+        }
+        if(checkElements[2].checked){
+           passwordGenerated.push(generateSpecial());
+            i++
+        }
+        if(checkElements[3].checked){
+            passwordGenerated.push(generateNumbers());
+            i++
+        }
+    }
+    console.log(passwordGenerated,"pwsd")
+    document.getElementById("output2").innerText = passwordGenerated;
+    document.getElementById("mygeneratedpassword").innerText = passwordGenerated;
+}
+
+
+function generateNumbers(){
+    let rndNumber = Math.floor(Math.random()*9);
+    console.log("Number -",rndNumber);
+    return rndNumber;
+}
+
+function generateUpperCase(){
+    let upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    let rndUpper = Math.floor(Math.random()*25);
+    console.log("Upper",rndUpper,upperCase[rndUpper]);
+    return upperCase[rndUpper];
+}
+
+function generateLowerCase(){
+    let lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    let rndLower = Math.floor(Math.random()*25);
+    console.log("Lower",rndLower,lowerCase[rndLower]);
+    return lowerCase[rndLower];
+}
+
+function generateSpecial(){
+    var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "]", "[", ";", ":", "<", ">", ",", ".", "?"];
+    let rndSpecial = Math.floor(Math.random()*(specialCharacters.length));
+    console.log("special",rndSpecial,specialCharacters[rndSpecial]);
+    return specialCharacters[rndSpecial];
+}
