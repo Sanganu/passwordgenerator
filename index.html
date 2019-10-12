@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Password Generator</title>
+    <title>Password helper</title>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <header class="page-headers #26c6da cyan lighten-1">
-        <h1>Password Generator App</h1>
+    <header class="#ffc107 amber">
+        <h2>Password Helper App</h2>
     </header>
     <br />
    <div class="container">
@@ -32,7 +32,7 @@
           <div class="card-content">
               <h3 class="card-title activator ">Check User entered password satisfies the given criteria<i class="material-icons right">more_vert</i></h3>
                <br />
-               <br />
+          
           </div>
           <div class="card-reveal">
               <span id="output" class="card-title activator grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -66,7 +66,7 @@
              <div class="card-content">
                  <h3 class="card-title activator">Generate password based on user criteria chosen<i class="material-icons right">more_vert</i></h4>
                   <br />
-                  <br />
+              
              </div>  
              <div class ="card-reveal">
                 <span id="output" class="card-title activator grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -106,7 +106,7 @@
                           <input  id="output2"></input>
                         </div> 
                       <button  class="collection-item" type="button" onclick="generatePassword()">Generate password</button>
-                      <button disabled class="collection-item" id ="copycb"type="button">Copy to Clipboard</button>
+                      <!-- <button disabled class="collection-item" id ="copycb"type="button">Copy to Clipboard</button> -->
                     </form>
                 </div>   
             </div> 
@@ -114,6 +114,10 @@
     </div>
   </div>
     <script src="./assets/script.js"></script>
+
+    <footer  class="#ffc107 amber">
+      &COPY; Sangeetha Kaliaperumal
+    </footer>
 </body>
 
 </html>
