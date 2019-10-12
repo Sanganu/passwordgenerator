@@ -34,7 +34,7 @@ function checkForPassword() {
     for (let i = 0; i < userdata.length; i++) {
         userdataarray.push(userdata[i])
     }
-    if (userdata.length >= 8 && userdata.length <= 255) {
+    if (userdata.length >= 8 && userdata.length <= 125) {
         validLength = true;
         console.log("Valid Length")
     }
