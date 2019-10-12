@@ -7,6 +7,16 @@ var validLength = false;
 var validLower = false;
 var validUpper = false;
 
+
+//For Input - Materialize
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+  });
+
+
+  // Reset Function
+
 function myreset(){
     var userdataarray = [];
     var validSpecial = false;
@@ -16,6 +26,8 @@ function myreset(){
     var validUpper = false;
     document.getElementById("userentry").innerText = "";
 }
+
+//First Part of the Program
 function checkForPassword() {
     console.log("Check pass");
     var userdata = document.querySelector("#userentry").value;
@@ -93,7 +105,17 @@ function checkForPassword() {
     }
 }
 
+// Copy to clipboard
+function copyToClick(){
+    var passwordgen = document.getElementById("output2");
+    console.log("pass",passwordgen)
+    passwordgen.focus()
+    passwordgen.select();
+    document.execCommand("copy");
+    alert(`Your password ${passwordgen.value} was copied`);
+}
 
+// Second Part of the Program
 function generatePassword(){
     var checkElements = document.getElementsByClassName('inputrules'),checked=true;
     var passwordLength = document.getElementById('lengthinput').value;
@@ -101,26 +123,29 @@ function generatePassword(){
     var i =0;
     console.log("CheckboxITEM",checkElements)
     while(i< passwordLength){
-        if (checkElements[0].checked){
+        if (checkElements[0].checked && i <passwordLength){
            passwordGenerated.push(generateLowerCase());
            i++
         }
-        if( checkElements[1].checked){
+        if( checkElements[1].checked && i <passwordLength){
            passwordGenerated.push(generateUpperCase());
             i++;
         }
-        if(checkElements[2].checked){
+        if(checkElements[2].checked  && i <passwordLength){
            passwordGenerated.push(generateSpecial());
             i++
         }
-        if(checkElements[3].checked){
+        if(checkElements[3].checked  && i <passwordLength){
             passwordGenerated.push(generateNumbers());
             i++
         }
     }
     console.log(passwordGenerated,"pwsd")
-    document.getElementById("output2").innerText = passwordGenerated;
-    document.getElementById("mygeneratedpassword").innerText = passwordGenerated;
+    // document.getElementById("output2").innerText = passwordGenerated.toString();
+    document.getElementById("mygeneratedpassword").innerText = passwordGenerated.slice(0).join("");
+    var copypassword = document.getElementById("copycb");
+    copypassword.removeAttribute("disabled");
+    copypassword.addEventListener("click",copyToClick);
 }
 
 

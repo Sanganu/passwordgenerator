@@ -16,31 +16,36 @@
 </head>
 
 <body>
-    <header class="page-headers">
+    <nav class="page-headers">
         <h1>Password Generator App</h1>
-    </header>
-    <table>
+    </nav>
+   <div class="container">
+    <div class="row">
+      <div class="col s6">
+          <h6 class="flow-text">Check User entered password satisfies the given criteria</h4>
+          <h3 id="output"></h3>
+          <ol>
+              <p class="flow-text">Password Generation Rules</p>
+              <li class="rules">Lowercase Letters</li>
+              <li class="rules">Uppercase Letters</li>
+              <li class="rules">Numbers</li>
+              <li class="rules">Special Characters    @ # $ % ^ &amp; * ( ) - _ ] [ ; : gt; , . ? </li>
+              <li class="rules">Valid Length between 8 and 255</li>
+          </ol>
       
-    </table>
-    <div class="">
-        <h4>Check User entered password satisfies the given criteria</h4>
-        <h3 id="output"></h3>
-        <ol>
-            <h4>Password Generation Rules</h4>
-            <li class="rules">Lowercase Letters</li>
-            <li class="rules">Uppercase Letters</li>
-            <li class="rules">Numbers</li>
-            <li class="rules">Special Characters    @ # $ % ^ &amp; * ( ) - _ ] [ ; : gt; , . ? </li>
-            <li class="rules">Valid Length between 8 and 255</li>
-        </ol>
-        <form>
-            <input type="text" id="userentry" />
+       <form>
+           <div class="input-field">
+              <label for="autocomplete-input">Enter Password</label>
+              <input type="text"  name="autocomplete-input" id="userentry" class="autocomplete" />
+           </div>
             <button type="button" id="checkpassword" onclick="checkForPassword()">Check Password</button>
-            <button type="reset" onclick ="myreset()">Reset</button>
+            <button type="reset" onclick ="myreset()">Reset</button> 
         </form>
     </div>
-    <div class="conatiner">
+ 
+    <div class="col s6">
         <h4>Generate password based on user criteria chosen</h4>
+       
         <form onsubmit="return false" class="collection">
                 <p class="collection-item">
                   <label>
@@ -69,15 +74,19 @@
                 <p  class="collection-item">
                   <label>
                     <input type="number" value = 10 id="lengthinput"/>
+
                     <span>Length 8 to 120 characters</span>
                   </label>
                 </p>
+                <div id='mygeneratedpassword'>
+                    <input  id="output2"></input>
+                  </div> 
                 <button  class="collection-item" type="button" onclick="generatePassword()">Generate password</button>
+                <button disabled class="collection-item" id ="copycb"type="button">Copy to Clipboard</button>
               </form>
-             <div id='mygeneratedpassword'>
-               <input  id="output2"/>
-             </div> 
+            </div> 
     </div>
+  </div>
     <script src="./assets/script.js"></script>
 </body>
 
