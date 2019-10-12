@@ -12,79 +12,105 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="./assets/style.css" />
+
 </head>
 
 <body>
-    <nav class="page-headers">
+    <header class="page-headers #26c6da cyan lighten-1">
         <h1>Password Generator App</h1>
-    </nav>
+    </header>
+    <br />
    <div class="container">
     <div class="row">
       <div class="col s6">
-          <h6 class="flow-text">Check User entered password satisfies the given criteria</h4>
-          <h3 id="output"></h3>
-          <ol>
-              <p class="flow-text">Password Generation Rules</p>
-              <li class="rules">Lowercase Letters</li>
-              <li class="rules">Uppercase Letters</li>
-              <li class="rules">Numbers</li>
-              <li class="rules">Special Characters    @ # $ % ^ &amp; * ( ) - _ ] [ ; : gt; , . ? </li>
-              <li class="rules">Valid Length between 8 and 255</li>
-          </ol>
-      
-       <form>
-           <div class="input-field">
-              <label for="autocomplete-input">Enter Password</label>
-              <input type="text"  name="autocomplete-input" id="userentry" class="autocomplete" />
-           </div>
-            <button type="button" id="checkpassword" onclick="checkForPassword()">Check Password</button>
-            <button type="reset" onclick ="myreset()">Reset</button> 
-        </form>
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img  class="activator"  src="./assets/img1.jpg"/>
+          </div>
+          <div class="card-content">
+              <h3 class="card-title activator ">Check User entered password satisfies the given criteria<i class="material-icons right">more_vert</i></h3>
+               <br />
+               <br />
+          </div>
+          <div class="card-reveal">
+              <span id="output" class="card-title activator grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              <form onsubmit="return false" class="collection">
+                  <ol>
+                      <li class="orange-text text-darken-2">Password Generation Rules</li>
+                      <li class="rules">Lowercase Letters</li>
+                      <li class="rul s">Uppercase Letters</li>
+                      <li class="rules">Numbers</li>
+                      <li class="rules">Special Characters    @ # $ % ^ &amp; * ( ) - _ ] [ ; : gt; , . ? </li>
+                      <li class="rules">Valid Length between 8 and 255</li>
+                  </ol>
+                  <br />
+                  <br />
+                  <div class="input-field">
+                     <label for="autocomplete-input">Enter Password</label>
+                     <input type="text"  name="autocomplete-input" id="userentry" class="autocomplete" />
+                  </div>
+                   <button type="button" id="checkpassword" onclick="checkForPassword()">Check Password</button>
+                   <button type="reset" onclick ="myreset()">Reset</button> 
+               </form>
+          </div>
+        </div>
     </div>
  
     <div class="col s6">
-        <h4>Generate password based on user criteria chosen</h4>
-       
-        <form onsubmit="return false" class="collection">
-                <p class="collection-item">
-                  <label>
-                    <input type="checkbox" class="inputrules" checked="lower"/>
-                    <span>Lowercase Letters</span>
-                  </label>
-                </p>
-                <p  class="collection-item">
-                  <label>
-                    <input type="checkbox" class="inputrules"/>
-                    <span>Uppercase Letters</span>
-                  </label>
-                </p>
-                <p  class="collection-item">
-                  <label>
-                    <input type="checkbox" class="inputrules"/>
-                    <span>Special Characters</span>
-                  </label>
-                </p>
-                <p  class="collection-item">
-                  <label>
-                    <input type="checkbox" class="inputrules"/>
-                    <span>Numbers</span>
-                  </label>
-                </p>
-                <p  class="collection-item">
-                  <label>
-                    <input type="number" value = 10 id="lengthinput"/>
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img  class="activator"  src="./assets/img2.jpg"/>
+              </div>
+             <div class="card-content">
+                 <h3 class="card-title activator">Generate password based on user criteria chosen<i class="material-icons right">more_vert</i></h4>
+                  <br />
+                  <br />
+             </div>  
+             <div class ="card-reveal">
+                <span id="output" class="card-title activator grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              <form onsubmit="return false" class="collection">
+                      <p class="collection-item">
+                        <label>
+                          <input type="checkbox" class="inputrules" checked="lower"/>
+                          <span>Lowercase Letters</span>
+                        </label>
+                      </p>
+                      <p  class="collection-item">
+                        <label>
+                          <input type="checkbox" class="inputrules"/>
+                          <span>Uppercase Letters</span>
+                        </label>
+                      </p>
+                      <p  class="collection-item">
+                        <label>
+                          <input type="checkbox" class="inputrules"/>
+                          <span>Special Characters</span>
+                        </label>
+                      </p>
+                      <p  class="collection-item">
+                        <label>
+                          <input type="checkbox" class="inputrules"/>
+                          <span>Numbers</span>
+                        </label>
+                      </p>
+                      <p  class="collection-item">
+                        <label>
+                          <input type="number" value = 10 id="lengthinput"/>
 
-                    <span>Length 8 to 120 characters</span>
-                  </label>
-                </p>
-                <div id='mygeneratedpassword'>
-                    <input  id="output2"></input>
-                  </div> 
-                <button  class="collection-item" type="button" onclick="generatePassword()">Generate password</button>
-                <button disabled class="collection-item" id ="copycb"type="button">Copy to Clipboard</button>
-              </form>
+                          <span>Length 8 to 120 characters</span>
+                        </label>
+                      </p>
+                      <div id='mygeneratedpassword'>
+                          <input  id="output2"></input>
+                        </div> 
+                      <button  class="collection-item" type="button" onclick="generatePassword()">Generate password</button>
+                      <button disabled class="collection-item" id ="copycb"type="button">Copy to Clipboard</button>
+                    </form>
+                </div>   
             </div> 
+          </div>    
     </div>
   </div>
     <script src="./assets/script.js"></script>

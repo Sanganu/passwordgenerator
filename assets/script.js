@@ -24,7 +24,7 @@ function myreset(){
     var validLength = false;
     var validLower = false;
     var validUpper = false;
-    document.getElementById("userentry").innerText = "";
+    document.getElementById("userentry").value = "";
 }
 
 //First Part of the Program
