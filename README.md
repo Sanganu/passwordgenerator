@@ -24,3 +24,8 @@ Option:2
     d. Numbers.
     e. Length between 8 and 125.
 3. The App displays the password generated.
+
+Technology
+HTML, CSS, Materialize CSS, JavaScript.
+
+Developed By: Sangeetha
