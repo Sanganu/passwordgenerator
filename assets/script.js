@@ -9,21 +9,21 @@ var validUpper = false;
 
 
 //For Input - Materialize
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
-  });
+// document.addEventListener('DOMContentLoaded', function() {
+//     var elems = document.querySelectorAll('.autocomplete');
+//     var instances = M.Autocomplete.init(elems, options);
+//   });
 
 
   // Reset Function
 
 function myreset(){
-    var userdataarray = [];
-    var validSpecial = false;
-    var validNumber = false;
-    var validLength = false;
-    var validLower = false;
-    var validUpper = false;
+     userdataarray = [];
+     validSpecial = false;
+     validNumber = false;
+     validLength = false;
+     validLower = false;
+     validUpper = false;
     document.getElementById("userentry").value = "";
 }
 
