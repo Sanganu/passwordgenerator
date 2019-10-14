@@ -142,7 +142,7 @@ function generatePassword(){
     }
     console.log(passwordGenerated,"pwsd")
     // document.getElementById("output2").innerText = passwordGenerated.toString();
-    document.getElementById("mygeneratedpassword").innerText = passwordGenerated.slice(0).join("");
+    document.getElementById("output2").innerText = passwordGenerated.slice(0).join("");
     // var copypassword = document.getElementById("copycb");
     // copypassword.removeAttribute("disabled");
     // copypassword.addEventListener("click",copyToClick);
@@ -174,4 +174,8 @@ function generateSpecial(){
     let rndSpecial = Math.floor(Math.random()*(specialCharacters.length));
     console.log("special",rndSpecial,specialCharacters[rndSpecial]);
     return specialCharacters[rndSpecial];
+}
+
+function myresettext(){
+    document.getElementById("output2").innerText = ""   
 }

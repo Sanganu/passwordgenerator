@@ -38,7 +38,7 @@
               <span id="output" class="card-title activator grey-text text-darken-4"><i class="material-icons right">close</i></span>
               <form onsubmit="return false" class="collection">
                   <ol>
-                      <li class="orange-text text-darken-2">Password Generation Rules</li>
+                      <h6 class="orange-text text-darken-2">Password Generation Rules</h6>
                       <li class="rules">Lowercase Letters</li>
                       <li class="rules">Uppercase Letters</li>
                       <li class="rules">Numbers</li>
@@ -51,8 +51,8 @@
                      <label for="autocomplete-input">Enter Password</label>
                      <input type="text"  name="autocomplete-input" id="userentry" class="autocomplete" />
                   </div>
-                   <button type="button" id="checkpassword" onclick="checkForPassword()">Check Password</button>
-                   <button type="reset" onclick ="myreset()">Reset</button> 
+                   <button type="button" id="checkpassword" class="btn waves-effect waves-light" onclick="checkForPassword()">Check Password</button>
+                   <button type="reset" class="waves-effect waves-light btn-small" onclick ="myreset()">Reset</button> 
                </form>
           </div>
         </div>
@@ -102,10 +102,15 @@
                           <span>Length 8 to 120 characters</span>
                         </label>
                       </p>
-                      <div id='mygeneratedpassword'>
-                          <input  id="output2"></input>
-                        </div> 
-                      <button  class="collection-item" type="button" onclick="generatePassword()">Generate password</button>
+                    
+                      <div id='mygeneratedpassword' class="collection-item">
+                           <label>
+                              <h5  id="output2"></h5>
+                              <span>Password Generated</span>
+                           </label>
+                          </div> 
+                      <button  class="btn waves-effect waves-light" type="button" onclick="generatePassword()">Generate password</button>
+                      <button type="reset" class="waves-effect waves-light btn-small" onclick ="myresettext()">Reset</button> 
                       <!-- <button disabled class="collection-item" id ="copycb"type="button">Copy to Clipboard</button> -->
                     </form>
                 </div>   

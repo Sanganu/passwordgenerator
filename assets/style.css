@@ -9,6 +9,11 @@ body{
 header{
     top:0;
     margin-top:0;
+    background-image: linear-gradient(to right, rgb(230, 201, 73),rgb(175, 6, 6),rgb(241, 241, 2),rgb(185, 131, 29),rgb(162, 224, 16));
+      
+}
+button{
+     border-radius: 12px;
 }
 header > h2{
     margin-top:0;
@@ -20,13 +25,19 @@ row {
 .card{
     max-height: 100%;
     line-height: 2rem;
+    border: 2px solid rgb(155, 9, 9);
 }
 .card-reveal{
     overflow: auto;
 }
 
+.card{
+    box-shadow: 5px 5px  rgb(155, 9, 9);
+}
 footer{
     position:sticky;
     bottom:0;
     line-height: 2.5rem;
+    background-image: linear-gradient(to right, rgb(230, 201, 73),rgb(175, 6, 6),rgb(241, 241, 2),rgb(185, 131, 29),rgb(162, 224, 16));
+ 
 }
