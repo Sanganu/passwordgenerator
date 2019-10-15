@@ -41,3 +41,6 @@ footer{
     background-image: linear-gradient(to right, rgb(230, 201, 73),rgb(175, 6, 6),rgb(241, 241, 2),rgb(185, 131, 29),rgb(162, 224, 16));
  
 }
+.card-content{
+    background: linear-gradient(180deg,rgb(193, 206, 9),rgb(211, 195, 123),rgba(233, 128, 8, 0.438));
+}
