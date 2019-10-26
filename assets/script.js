@@ -142,10 +142,10 @@ function generatePassword(){
     }
     console.log(passwordGenerated,"pwsd")
     // document.getElementById("output2").innerText = passwordGenerated.toString();
-    document.getElementById("output2").innerText = passwordGenerated.slice(0).join("");
-    // var copypassword = document.getElementById("copycb");
-    // copypassword.removeAttribute("disabled");
-    // copypassword.addEventListener("click",copyToClick);
+    document.getElementById("output2").value = passwordGenerated.slice(0).join("");
+    var copypassword = document.getElementById("copycb");
+    copypassword.disabled = false;
+    copypassword.addEventListener("click",copyToClick);
 }
 
 

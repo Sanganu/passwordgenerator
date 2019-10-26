@@ -44,3 +44,16 @@ footer{
 .card-content{
     background: linear-gradient(180deg,rgb(193, 206, 9),rgb(211, 195, 123),rgba(233, 128, 8, 0.438));
 }
+#mygeneratedpassword{
+    border: 1px solid rgb(129, 115, 115);
+}
+@media only screen and (max-width: 948px) {
+    footer{
+     position: fixed;
+     bottom:0;
+     width:100%;
+    }
+    .card{
+        max-height: 100%;
+    }
+  }

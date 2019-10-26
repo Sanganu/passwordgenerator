@@ -102,17 +102,17 @@
                           <span>Length 8 to 120 characters</span>
                         </label>
                       </p>
-                    
-                      <div id='mygeneratedpassword' class="collection-item">
-                           <label>
-                              <h5  id="output2"></h5>
-                              <span>Password Generated</span>
-                           </label>
-                          </div> 
                       <button  class="btn waves-effect waves-light" type="button" onclick="generatePassword()">Generate password</button>
+                     <div id='mygeneratedpassword' class="collection-item">
+                           <label>
+                              Password Generated
+                              <input readonly  id="output2">
+                           </label>
                       <button type="reset" class="waves-effect waves-light btn-small" onclick ="myresettext()">Reset</button> 
-                      <!-- <button disabled class="collection-item" id ="copycb"type="button">Copy to Clipboard</button> -->
+                      <button disabled class="btn waves-effect waves-light" id ="copycb"type="button">Copy to Clipboard</button>
+                    </div> 
                     </form>
+
                 </div>   
             </div> 
           </div>    
