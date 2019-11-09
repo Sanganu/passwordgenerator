@@ -47,6 +47,10 @@ footer{
 #mygeneratedpassword{
     border: 1px solid rgb(129, 115, 115);
 }
+
+img{
+    max-height: 300px;
+}
 @media only screen and (max-width: 948px) {
     footer{
      position: fixed;
